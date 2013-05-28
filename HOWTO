@@ -6,3 +6,4 @@ git add filename - Na segunda vez, você irá dizer que esse arquivo será
 									 versionado.
 git commit -m "mensagem" - salva como um 'estágio' de desenvolvimento
 git push origin master   - envia para o GitHub
+bleh
