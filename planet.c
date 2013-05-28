@@ -1,7 +1,7 @@
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include <GL/glut.h>
-
+//teste
 static int year = 0, day = 0, viewDistance = -10;
 static float sunSize = 2, mercurySize = 0.007, venusSize = 0.017, earthSize = 0.019, marsSize = 0.01, jupiterSize = 0.2, saturnSize = 0.173, uranusSize = 0.15, neptuneSize = 0.14;
 static int mercuryYear = 0, venusYear = 0, marsYear = 0, jupiterYear = 0, saturnYear = 0, uranusYear = 0, neptuneYear = 0;
