@@ -32,7 +32,7 @@ void display(void)
    glColor3f (1.0, 1.0, 1.0);
    
    glPushMatrix();
-   glTranslatef(0, 0, -10);
+   glTranslatef(0, 0, viewDistance);
    glPushMatrix();
    glColor3f (1, 1, 0);
    //glutSolidSphere(1.0, 20, 16);   /* draw sun */
@@ -58,7 +58,7 @@ void reshape (int w, int h)
    glViewport (0, 0, (GLsizei) w, (GLsizei) h); 
    glMatrixMode (GL_PROJECTION);
    glLoadIdentity ();
-   gluPerspective(60.0, (GLfloat) w/(GLfloat) h, 1.0, 20.0);
+   gluPerspective(60.0, (GLfloat) w/(GLfloat) h, 1.0, 50.0);
    glMatrixMode(GL_MODELVIEW);
    glLoadIdentity();
    gluLookAt (0.0, 0.0, 5.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
@@ -99,12 +99,26 @@ void keyboard (unsigned char key, int x, int y)
          saturnYear = (saturnYear - saturnYearStep) % 360;
          uranusYear = (uranusYear - uranusYearStep) % 360;
          neptuneYear = (neptuneYear - neptuneYearStep) % 360;
+         glutPostRedisplay();
          break;
       case 'v':
-		viewDistance -= 1;
+		viewDistance =  viewDistance - 1;
+		glutPostRedisplay();
 		break;
 	  case 'V':
-		
+		viewDistance = viewDistance + 1;
+		glutPostRedisplay();
+		break;
+	  case 't':
+		mercuryYear = 0;
+        venusYear = 0;
+        year = 0;
+        marsYear = 0;
+        jupiterYear = 0;
+        saturnYear = 0;
+        uranusYear = 0;
+        neptuneYear = 0;
+        glutPostRedisplay();
 	  break;
       default:
          break;
