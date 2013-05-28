@@ -1,10 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include <GL/glut.h>
-//teste
+
+#Variables
 static int year = 0, day = 0, viewDistance = -10;
-static float sunSize = 2, mercurySize = 0.007, venusSize = 0.017, earthSize = 0.019, marsSize = 0.01, jupiterSize = 0.2, saturnSize = 0.173, uranusSize = 0.15, neptuneSize = 0.14;
-static int mercuryYear = 0, venusYear = 0, marsYear = 0, jupiterYear = 0, saturnYear = 0, uranusYear = 0, neptuneYear = 0;
+static float sunSize = 2,
+						 mercurySize = 0.007,
+						 venusSize = 0.017,
+						 earthSize = 0.019,
+						 marsSize = 0.01,
+						 jupiterSize = 0.2,
+						 saturnSize = 0.173,
+						 uranusSize = 0.15,
+						 neptuneSize = 0.14;
+static int mercuryYear = 0,
+					 venusYear = 0,
+					 marsYear = 0,
+					 jupiterYear = 0,
+					 saturnYear = 0,
+					 uranusYear = 0,
+					 neptuneYear = 0;
 //static float mercuryYear = 0.24, venusYear = 0.62, earthYear = 1, marthYear = 1.88, jupiterYear = 12, saturnYear = 29, uranusYear = 84, neptuneYear = 165;
 static int mercuryYearStep = 1, venusYearStep = 1, earthYearStep = 1, marsYearStep = 2, jupiterYearStep = 4, saturnYearStep = 6, uranusYearStep = 10, neptuneYearStep = 15;
 
@@ -15,13 +32,13 @@ void init(void)
    glShadeModel (GL_SMOOTH);
 }
 
-void drawPlanet(float year, float day, float translation, float planetSize, float r, float g, float b){
+void drawPlanet(float year, float day, float translation, float planetSize, float r, float g, float b)
+{
 	glPushMatrix();
 	glRotatef ((GLfloat) year, 0.0, 1.0, 0.0);
 	glTranslatef (translation, 0.0, 0.0);
 	glRotatef ((GLfloat) day, 0.0, 1.0, 0.0);
 	glColor3f(r, g, b);
-	//glutSolidSphere(planetSize, 10, 8);    /* draw smaller planet */
 	glutSolidSphere(planetSize, 10, 8);    /* draw smaller planet */
 	glPopMatrix();
 }
@@ -101,18 +118,16 @@ void keyboard (unsigned char key, int x, int y)
          neptuneYear = (neptuneYear - neptuneYearStep) % 360;
          break;
       case 'v':
-		viewDistance -= 1;
-		break;
+			   viewDistance -= 1;
+				 break;
 	  case 'V':
-		
-	  break;
-      default:
+				 break;
+    default:
          break;
    }
 }
 
-int main(int argc, char** argv)
-{
+int main(int argc, char** argv) {
    glutInit(&argc, argv);
    glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGB);
    glutInitWindowSize (500, 500); 
@@ -123,5 +138,5 @@ int main(int argc, char** argv)
    glutReshapeFunc(reshape);
    glutKeyboardFunc(keyboard);
    glutMainLoop();
-   return 0;
+   return EXIT_SUCCESS;
 }
