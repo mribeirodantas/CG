@@ -4,7 +4,6 @@
 #include <GL/glu.h>
 #include <GL/glut.h>
 
-#Variables
 static int year = 0, day = 0, viewDistance = -10;
 static float sunSize = 2,
 						 mercurySize = 0.007,
@@ -136,7 +135,10 @@ void keyboard (unsigned char key, int x, int y)
         uranusYear = 0;
         neptuneYear = 0;
         glutPostRedisplay();
-	  break;
+		break;
+	  case 27:
+		exit(0);
+		break;
 	  default:
 		break;
    }
