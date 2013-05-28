@@ -1,0 +1,8 @@
+git status
+
+git add filename - Na primeira vez que você usar o add, você irá informar
+									o git de que esse arquivo deverá ser 'observado'.
+git add filename - Na segunda vez, você irá dizer que esse arquivo será
+									 versionado.
+git commit -m "mensagem" - salva como um 'estágio' de desenvolvimento
+git push origin master   - envia para o GitHub
