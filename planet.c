@@ -119,7 +119,6 @@ void keyboard (unsigned char key, int x, int y)
          glutPostRedisplay();
          break;
       case 'v':
-<<<<<<< HEAD
 		viewDistance =  viewDistance - 1;
 		glutPostRedisplay();
 		break;
@@ -138,15 +137,8 @@ void keyboard (unsigned char key, int x, int y)
         neptuneYear = 0;
         glutPostRedisplay();
 	  break;
-      default:
-=======
-			   viewDistance -= 1;
-				 break;
-	  case 'V':
-				 break;
-    default:
->>>>>>> ac3e571f7a68a2c6883793d9bbb931379a817195
-         break;
+	  default:
+		break;
    }
 }
 
